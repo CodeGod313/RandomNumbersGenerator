@@ -21,6 +21,7 @@ public class PearsonCriterionCounterImpl implements PearsonCriterionCounter {
             distribution.add(result);
         });
         double experimentalPearsonCriterion = distribution.stream().reduce(Double::sum).get();
+        experimentalPearsonCriterion /= intervalsNumber;
         return experimentalPearsonCriterion;
     }
 }

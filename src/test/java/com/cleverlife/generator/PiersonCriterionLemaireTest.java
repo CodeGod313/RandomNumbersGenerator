@@ -28,7 +28,7 @@ public class PiersonCriterionLemaireTest {
     @Test
     void testLemaireGeneratorViaPearsonCriterionFor20Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
-        for (int i = 0; i < 400; i++) {
+        for (int i = 0; i < 10000; i++) {
             pseudoRandomSequence.add(lemaireGenerator.nextInt());
         }
         double experimentalPearsonCriterion =

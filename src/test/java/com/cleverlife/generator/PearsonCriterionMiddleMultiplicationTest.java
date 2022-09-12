@@ -26,7 +26,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
     @Test
     void testLemaireGeneratorViaPearsonCriterionFor20Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
-        for (int i = 0; i < 400; i++) {
+        for (int i = 0; i < 40000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
         }
         double experimentalPearsonCriterion =
@@ -40,7 +40,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
     @Test
     void testLemaireGeneratorViaPearsonCriterionFor40Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
-        for (int i = 0; i < 1600; i++) {
+        for (int i = 0; i < 160000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
         }
         double experimentalPearsonCriterion =
@@ -53,7 +53,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
     @Test
     void testLemaireGeneratorViaPearsonCriterionFor60Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
-        for (int i = 0; i < 3600; i++) {
+        for (int i = 0; i < 360000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
         }
         double experimentalPearsonCriterion =
