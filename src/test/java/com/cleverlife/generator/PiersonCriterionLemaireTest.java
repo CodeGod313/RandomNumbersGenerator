@@ -66,6 +66,19 @@ public class PiersonCriterionLemaireTest {
     }
 
     @Test
+    void testLemaireGeneratorViaPearsonCriterionFor70Intervals() {
+        List<Integer> pseudoRandomSequence = new ArrayList<>();
+        for (int i = 0; i < 3600; i++) {
+            pseudoRandomSequence.add(lemaireGenerator.nextInt());
+        }
+        double experimentalPearsonCriterion =
+                pearsonCriterionCounter.countExperimentalPearsonCriterionForPseudoRandomSequence(pseudoRandomSequence, 70);
+        System.out.println("Experimental Pearson criterion for 70 intervals is " + experimentalPearsonCriterion);
+        double criticalPearsonCriterion = 90.531;
+        Assertions.assertTrue(experimentalPearsonCriterion < criticalPearsonCriterion);
+    }
+
+    @Test
     void testLemaireGeneratorViaPearsonCriterionFor100Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {

@@ -24,7 +24,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
     }
 
     @Test
-    void testLemaireGeneratorViaPearsonCriterionFor20Intervals() {
+    void testMiddleMultiplicationViaPearsonCriterionFor20Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
         for (int i = 0; i < 40000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
@@ -38,7 +38,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
 
 
     @Test
-    void testLemaireGeneratorViaPearsonCriterionFor40Intervals() {
+    void testMiddleMultiplicationViaPearsonCriterionFor40Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
         for (int i = 0; i < 160000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
@@ -51,7 +51,7 @@ public class PearsonCriterionMiddleMultiplicationTest {
     }
 
     @Test
-    void testLemaireGeneratorViaPearsonCriterionFor60Intervals() {
+    void testMiddleMultiplicationViaPearsonCriterionFor60Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
         for (int i = 0; i < 360000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
@@ -62,9 +62,21 @@ public class PearsonCriterionMiddleMultiplicationTest {
         double criticalPearsonCriterion = 77.9305;
         Assertions.assertTrue(experimentalPearsonCriterion < criticalPearsonCriterion);
     }
+    @Test
+    void testMiddleMultiplicationViaPearsonCriterionFor70Intervals() {
+        List<Integer> pseudoRandomSequence = new ArrayList<>();
+        for (int i = 0; i < 360000; i++) {
+            pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
+        }
+        double experimentalPearsonCriterion =
+                pearsonCriterionCounter.countExperimentalPearsonCriterionForPseudoRandomSequence(pseudoRandomSequence, 70);
+        System.out.println("Experimental Pearson criterion for 70 intervals is " + experimentalPearsonCriterion);
+        double criticalPearsonCriterion = 90.531;
+        Assertions.assertTrue(experimentalPearsonCriterion < criticalPearsonCriterion);
+    }
 
     @Test
-    void testLemaireGeneratorViaPearsonCriterionFor100Intervals() {
+    void testMiddleMultiplicationViaPearsonCriterionFor100Intervals() {
         List<Integer> pseudoRandomSequence = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {
             pseudoRandomSequence.add(middleMultiplicationGenerator.nextInt());
